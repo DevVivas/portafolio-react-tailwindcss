@@ -16,7 +16,7 @@ const contactLinks = [
     },
 ]
 
-export default function ContactSection() {
+export default function ContactoSeccion() {
     return (
         <section id="contact" className="bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-6xl text-center">

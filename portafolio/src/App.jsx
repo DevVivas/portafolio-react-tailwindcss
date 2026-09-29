@@ -2,7 +2,7 @@ import './App.css'
 import HeroSection from './components/HeroSection.jsx'
 import SobremiComponent from './components/SobreMi.jsx'
 import Projects from './components/projectSection.jsx'
-import ContactSection from './components/ContactSection.jsx'
+import ContactoSeccion from './components/ContactoSeccion.jsx'
 import MoreSection from './components/MoreSection.jsx'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <HeroSection />
       <SobremiComponent />
       <Projects />
-      <ContactSection />
+      <ContactoSeccion />
       <MoreSection />
     </main>
   )
