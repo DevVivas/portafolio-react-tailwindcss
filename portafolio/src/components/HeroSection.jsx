@@ -1,5 +1,3 @@
-import backgroundImage from '../assets/background.jpg'
-
 export default function HeroSection({
     nombre = 'ABRAHAM VIVAS',
     role = 'Software Engineer',
@@ -9,14 +7,7 @@ export default function HeroSection({
     const lastName = rest.join(' ')
 
     return (
-        <div
-            className="relative min-h-screen w-full overflow-hidden bg-neutral-1000 text-neutral-300"
-                style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.64)), url(${backgroundImage})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                }}
-                >
+        <div className="relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
                 <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');.hero-font { font-family: 'Poppins', sans-serif; }`}</style>
 
                 <nav className="relative z-10 flex items-center justify-center px-6 py-6 sm:px-12">
@@ -39,7 +30,7 @@ export default function HeroSection({
                 </nav>
 
                 <div className="relative z-10 mt-30 px-6 sm:px-0">
-                    <h1 className="hero-font text-7xl font-extrabold leading-[0.99] tracking-tight text-neutral-400 sm:text-8xl md:text-9xl">
+                    <h1 className="hero-font text-center text-7xl font-extrabold leading-[0.99] tracking-tight text-neutral-400 sm:text-8xl md:text-9xl">
                         {firstName}
                     <br />
                     {lastName}
