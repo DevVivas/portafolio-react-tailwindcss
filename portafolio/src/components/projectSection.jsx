@@ -11,7 +11,7 @@ export default function Projects() {
   return (
     <section id="projects" className="flex min-h-screen w-full items-center bg-neutral-950 px-6 py-16 sm:px-12 lg:px-20">
       <div className="mx-auto w-full max-w-6xl">
-        <p className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
+        <p className="text-center text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
           [ Proyectos ]
         </p>
         <article className="mt-12 grid gap-8 border-y border-neutral-800 py-8 md:grid-cols-[1fr_auto] md:items-end">

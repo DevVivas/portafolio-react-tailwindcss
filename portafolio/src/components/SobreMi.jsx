@@ -29,7 +29,7 @@ const SobremiComponent = () => {
     return (
         <section id="sobreMi" className="relative overflow-hidden bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-6xl">
-                <div className="mb-12 flex flex-col gap-4">
+                <div className="mb-12 flex flex-col gap-4 text-center">
                     <span className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
                         [ Sobre Mi ]
                     </span>
@@ -40,20 +40,20 @@ const SobremiComponent = () => {
                 </div>
                 <div className="grid gap-10">
 
-                    <div className="grid w-full auto-rows-fr grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3">
+                    <div className="mx-auto grid w-full max-w-sm auto-rows-fr grid-cols-1 items-stretch gap-5 sm:max-w-3xl sm:grid-cols-2 md:grid-cols-3">
                         {cardsSobreMi.map((p) => (
                             <article key={p.id} className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/80 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-600 hover:bg-neutral-900">
                                 
-                                <div className="relative aspect-square w-full overflow-hidden bg-neutral-900">
+                                <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 sm:aspect-[4/3]">
                                     <p.icon aria-hidden="true" className="absolute inset-0 m-auto h-16 w-16 text-neutral-500 transition-transform duration-300 group-hover:scale-110 group-hover:text-neutral-200" />
                                     <p className="absolute left-4 top-4 rounded bg-neutral-950/75 px-3 py-1 text-sm font-light uppercase tracking-[0.28em] text-neutral-100">
                                         {p.category}
                                     </p>
                                 </div>
 
-                                <div className="flex min-h-[190px] flex-1 flex-col space-y-3 p-5">
-                                    <h3 className="min-h-10 text-sm font-bold text-neutral-100">{p.title}</h3>
-                                    <p className="min-h-[72px] text-sm leading-6 text-neutral-400">
+                                <div className="flex min-h-40 flex-1 flex-col space-y-2 p-4">
+                                    <h3 className="min-h-8 text-sm font-bold text-neutral-100">{p.title}</h3>
+                                    <p className="min-h-[48px] text-sm leading-6 text-neutral-400">
                                         {p.description}
                                     </p>
 

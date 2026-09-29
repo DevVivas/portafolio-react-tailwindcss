@@ -7,7 +7,7 @@ export default function HeroSection({
     const lastName = rest.join(' ')
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
+        <div className="hero-viewport relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
                 <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');.hero-font { font-family: 'Poppins', sans-serif; }`}</style>
 
                 <nav className="relative z-10 flex items-center justify-center px-6 py-6 sm:px-12">
@@ -29,8 +29,8 @@ export default function HeroSection({
                     </ul>
                 </nav>
 
-                <div className="relative z-10 mt-30 px-6 sm:px-0">
-                    <h1 className="hero-font text-center text-7xl font-extrabold leading-[0.99] tracking-tight text-neutral-400 sm:text-8xl md:text-9xl">
+                <div className="relative z-10 mt-20 px-6 sm:mt-30 sm:px-0">
+                    <h1 className="hero-font text-center text-5xl font-extrabold leading-[0.99] tracking-tight text-neutral-400 min-[360px]:text-6xl sm:text-8xl md:text-9xl">
                         {firstName}
                     <br />
                     {lastName}
@@ -40,16 +40,16 @@ export default function HeroSection({
                     <p className="hero-font text-center text-sm font-semibold text-neutral-400 sm:text-2xl">
                         [ {role} ]
                     </p>
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
                         <a
                             href="#projects"
-                            className="border border-neutral-600 px-5 py-3 text-sm font-semibold text-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-900"
+                            className="rounded-lg border border-neutral-600 px-3 py-3 text-sm font-semibold text-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-900 sm:px-5"
                         >
                             Ver proyectos
                         </a>
                         <a
                             href="#contact"
-                            className="border border-neutral-600 px-5 py-3 text-sm font-semibold text-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-900"
+                            className="rounded-lg border border-neutral-600 px-3 py-3 text-sm font-semibold text-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-900 sm:px-5"
                         >
                             Contactarme
                         </a>

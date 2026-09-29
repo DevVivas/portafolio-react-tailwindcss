@@ -1,6 +1,6 @@
 export default function MoreSection() {
     return (
-        <section id="mas" className="mt-20 border-t border-neutral-900 bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
+        <section id="mas" className="bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-4xl text-center">
                 <p className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
                     [ Más ]
