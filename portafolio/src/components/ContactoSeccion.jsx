@@ -18,7 +18,7 @@ const contactLinks = [
 
 export default function ContactoSeccion() {
     return (
-        <section id="contact" className="bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
+        <section id="contact" className="bg-neutral-950 px-6 py-2 text-neutral-300 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-6xl text-center">
                 <p className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
                     [ Contacto ]
@@ -44,7 +44,7 @@ export default function ContactoSeccion() {
                     </div>
                     <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-7 text-neutral-500">
                         Puedes escribirme para conversar sobre proyectos web, desarrollo de APIs,
-                        colaboraciones profesionales o nuevas oportunidades.
+                        colaboraciones profesionales o nuevas oportunidades laborales.
                     </p>
                 </div>
             </div>

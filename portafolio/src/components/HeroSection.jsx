@@ -1,3 +1,5 @@
+import logo from '../assets/images/favicon-iconapp.svg'
+
 export default function HeroSection({
     nombre = 'ABRAHAM VIVAS',
     role = 'Software Engineer',
@@ -7,14 +9,21 @@ export default function HeroSection({
     const lastName = rest.join(' ')
 
     return (
-        <div className="hero-viewport relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
+        <div id="inicio" className="hero-viewport relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
                 <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');.hero-font { font-family: 'Poppins', sans-serif; }`}</style>
 
-                <nav className="relative z-10 flex items-center justify-center px-6 py-6 sm:px-12">
+                <nav className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-center bg-neutral-950 px-6 sm:px-12">
+                    <a
+                        href="#inicio"
+                        aria-label="Ir al inicio"
+                        className="absolute left-6 top-1/2 -translate-y-1/2 transition-opacity hover:opacity-75 sm:left-12"
+                    >
+                        <img src={logo} alt="" className="h-12 w-12 brightness-0 invert" />
+                    </a>
                     <ul className="flex justify-center gap-8 text-sm font-semibold tracking-wide text-neutral-400 sm:gap-15">
                         {links.map((link) => {
                             const hrefs = {
-                                'Sobre mí': '#SobreMiSeccion',
+                                'Sobre mí': '#sobreMi',
                                 Más: '#mas',
                             }
 
