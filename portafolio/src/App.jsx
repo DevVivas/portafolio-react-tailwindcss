@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import './App.css'
 import HeroSection from './components/HeroSection.jsx'
-import SobremiComponent from './components/SobreMi.jsx'
-import Projects from './components/projectSection.jsx'
+import SobreMiSeccionComponent from './components/SobreMiSeccion.jsx'
+import Projects from './components/ProjectosSeccion.jsx'
 import ContactoSeccion from './components/ContactoSeccion.jsx'
-import MoreSection from './components/MoreSection.jsx'
+import MasSeccion from './components/MasSeccion.jsx'
 
 function App() {
     useEffect(() => {
@@ -41,10 +41,10 @@ function App() {
     return (
         <main className="flex flex-col gap-8 bg-neutral-950">
             <HeroSection />
-            <SobremiComponent />
+            <SobreMiSeccionComponent />
             <Projects />
             <ContactoSeccion />
-            <MoreSection />
+            <MasSeccion />
         </main>
     )
 }

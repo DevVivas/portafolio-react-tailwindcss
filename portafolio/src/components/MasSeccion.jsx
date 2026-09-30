@@ -1,4 +1,4 @@
-export default function MoreSection() {
+export default function MasSeccion() {
     return (
         <section id="mas" className="bg-neutral-950 px-6 py-20 text-neutral-300 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-4xl text-center">

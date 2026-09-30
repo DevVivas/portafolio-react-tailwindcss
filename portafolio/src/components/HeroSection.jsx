@@ -14,7 +14,7 @@ export default function HeroSection({
                     <ul className="flex justify-center gap-8 text-sm font-semibold tracking-wide text-neutral-400 sm:gap-15">
                         {links.map((link) => {
                             const hrefs = {
-                                'Sobre mí': '#sobreMi',
+                                'Sobre mí': '#SobreMiSeccion',
                                 Más: '#mas',
                             }
 

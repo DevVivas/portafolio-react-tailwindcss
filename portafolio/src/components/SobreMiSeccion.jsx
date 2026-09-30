@@ -4,23 +4,23 @@ import { ArrowRight, Monitor, Server, Workflow } from 'lucide-react'
 const cardsSobreMi = [
     {
         id: 1,
-        title: 'APIs • SEGURIDAD',
+        title: 'APIs • Databases',
         category: 'Backend',
-        description: 'Desarrollo de API REST y GraphQL • MongoDB • Docker',
+        description: 'Desarollo de APIs REST y GraphQL con MongoDB, PostgreSQL y Docker.',
         icon: Server,
     },
     {
         id: 2,
         title: 'Docker • GitHub Actions',
         category: 'DevOps',
-        description: 'CI/CD y despliegue en IaaS • PaaS • archivos estáticos • Prometheus',
+        description: 'CI/CD, despliegues en la nube y métricas con Prometheus y Grafana.',
         icon: Workflow,
     },
     {
         id: 3,
-        title: 'React • Vite • Bootstrap',
+        title: 'React • Tailwind CSS ',
         category: 'Frontend',
-        description: 'Desarrollo de interfaces con React, Bootstrap y Tailwind',
+        description: 'Interfaces con React, Bootstrap, Tailwind CSS y HTML semántico.',
         icon: Monitor,
     },
 ]
@@ -46,14 +46,14 @@ const SobremiComponent = () => {
                                 
                                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 sm:aspect-[4/3]">
                                     <p.icon aria-hidden="true" className="absolute inset-0 m-auto h-16 w-16 text-neutral-500 transition-transform duration-300 group-hover:scale-110 group-hover:text-neutral-200" />
-                                    <p className="absolute left-4 top-4 rounded bg-neutral-950/75 px-3 py-1 text-sm font-light uppercase tracking-[0.28em] text-neutral-100">
+                                    <p className="absolute left-4 top-2 rounded bg-neutral-950/75 px-3 py-1 text-sm font-light uppercase tracking-[0.28em] text-neutral-100">
                                         {p.category}
                                     </p>
                                 </div>
 
-                                <div className="flex min-h-40 flex-1 flex-col space-y-2 p-4">
+                                <div className="flex min-h-30 flex-1 flex-col space-y-2 p-4">
                                     <h3 className="min-h-8 text-sm font-bold text-neutral-100">{p.title}</h3>
-                                    <p className="min-h-[48px] text-sm leading-6 text-neutral-400">
+                                    <p className="min-h-[48px] text-left text-sm leading-6 text-neutral-400">
                                         {p.description}
                                     </p>
 
