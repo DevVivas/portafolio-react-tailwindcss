@@ -1,6 +1,6 @@
 export default function MasSeccion() {
     return (
-        <section id="mas" className="bg-neutral-950 px-6 py-70 text-neutral-300 sm:px-12 lg:px-20">
+        <section id="mas" className="bg-neutral-950 px-6 py-16 text-neutral-300 sm:px-12 sm:py-24 lg:px-20 lg:py-36">
             <div className="mx-auto max-w-4xl text-center">
                 <p className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
                     [ Más ]

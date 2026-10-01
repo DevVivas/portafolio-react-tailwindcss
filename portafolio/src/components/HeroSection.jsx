@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import logo from '../assets/images/favicon-iconapp.svg'
 
 export default function HeroSection({
@@ -5,14 +6,43 @@ export default function HeroSection({
     role = 'Software Engineer',
     links = ['Sobre mí', 'Más'],
 }) {
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [activeSection, setActiveSection] = useState('')
     const [firstName, ...rest] = nombre.split(' ')
     const lastName = rest.join(' ')
+
+    useEffect(() => {
+        const updateScrollState = () => setIsScrolled(window.scrollY > 24)
+        updateScrollState()
+        window.addEventListener('scroll', updateScrollState, { passive: true })
+
+        return () => window.removeEventListener('scroll', updateScrollState)
+    }, [])
+
+    useEffect(() => {
+        if (!('IntersectionObserver' in window)) return
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const activeEntry = entries.find((entry) => entry.isIntersecting)
+                if (activeEntry) setActiveSection(`#${activeEntry.target.id}`)
+            },
+            { rootMargin: '-38% 0px -52% 0px' },
+        )
+
+        ;['sobreMi', 'mas'].forEach((id) => {
+            const section = document.getElementById(id)
+            if (section) observer.observe(section)
+        })
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <div id="inicio" className="hero-viewport relative min-h-screen w-full overflow-hidden bg-neutral-950 text-neutral-300">
                 <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');.hero-font { font-family: 'Poppins', sans-serif; }`}</style>
 
-                <nav className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-center bg-neutral-950 px-6 sm:px-12">
+                <nav className={`fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-center px-6 backdrop-blur-xl transition-colors duration-300 sm:px-12 ${isScrolled ? 'bg-neutral-950/85 shadow-lg shadow-black/20' : 'bg-neutral-950/30'}`}>
                     <a
                         href="#inicio"
                         aria-label="Ir al inicio"
@@ -26,11 +56,21 @@ export default function HeroSection({
                                 'Sobre mí': '#sobreMi',
                                 Más: '#mas',
                             }
+                            const href = hrefs[link]
+                            const isActive = activeSection === href
 
                             return (
                                 <li key={link}>
-                                    <a className="transition-colors duration-200 hover:text-white" href={hrefs[link]}>
+                                    <a
+                                        aria-current={isActive ? 'location' : undefined}
+                                        className={`group relative inline-flex items-center py-2 transition-colors duration-200 ${isActive ? 'text-white' : 'text-neutral-400 hover:text-white'}`}
+                                        href={href}
+                                    >
                                         {link}
+                                        <span
+                                            aria-hidden="true"
+                                            className={`absolute bottom-1 left-0 h-px w-full origin-left bg-neutral-300 transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                                        />
                                     </a>
                                 </li>
                             )
