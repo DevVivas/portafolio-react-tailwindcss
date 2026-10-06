@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react'
+import reactIcon from '../assets/images/react-icon.svg'
+import postgresqlIcon from '../assets/images/postgresql-icon.svg'
+import gitIcon from '../assets/images/git-icon.svg'
+import dockerIcon from '../assets/images/docker-icon.svg'
 import logo from '../assets/images/favicon-iconapp.svg'
 
 export default function HeroSection({
@@ -85,7 +89,20 @@ export default function HeroSection({
                     {lastName}
                 </h1>
 
-                <div className="mt-12 w-full sm:mt-30">
+                <div aria-label="Tecnologías" className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+                    {[
+                        { name: 'React', icon: reactIcon },
+                        { name: 'PostgreSQL', icon: postgresqlIcon },
+                        { name: 'Git', icon: gitIcon },
+                        { name: 'Docker', icon: dockerIcon },
+                    ].map(({ name, icon }) => (
+                        <div key={name} className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-2 shadow-[0_0_14px_rgba(255,255,255,0.12)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] sm:h-12 sm:w-12">
+                            <img src={icon} alt={name} className="h-full w-full object-contain" />
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-6 w-full">
                     <p className="hero-font text-center text-sm font-semibold text-neutral-400 sm:text-2xl">
                         [ {role} ]
                     </p>
