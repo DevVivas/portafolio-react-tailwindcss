@@ -3,6 +3,13 @@ import reactIcon from '../assets/images/react-icon.svg'
 import postgresqlIcon from '../assets/images/postgresql-icon.svg'
 import gitIcon from '../assets/images/git-icon.svg'
 import dockerIcon from '../assets/images/docker-icon.svg'
+import javaIcon from '../assets/images/java-icon.svg'
+import expressIcon from '../assets/images/express-icon.svg'
+import phpIcon from '../assets/images/php-icon.svg'
+import javascriptIcon from '../assets/images/javascript-icon.svg'
+import pythonIcon from '../assets/images/python-icon.svg'
+import laravelIcon from '../assets/images/laravel-icon.svg'
+import djangoIcon from '../assets/images/django-icon.svg'
 import logo from '../assets/images/favicon-iconapp.svg'
 
 export default function HeroSection({
@@ -89,20 +96,27 @@ export default function HeroSection({
                     {lastName}
                 </h1>
 
-                <div aria-label="Tecnologías" className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+                <div aria-label="Tecnologías" className="mx-auto mt-6 flex w-fit max-w-full flex-wrap justify-center gap-2 px-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] sm:gap-3">
                     {[
                         { name: 'React', icon: reactIcon },
                         { name: 'PostgreSQL', icon: postgresqlIcon },
                         { name: 'Git', icon: gitIcon },
                         { name: 'Docker', icon: dockerIcon },
+                        { name: 'Java', icon: javaIcon },
+                        { name: 'Express', icon: expressIcon },
+                        { name: 'PHP', icon: phpIcon },
+                        { name: 'JavaScript', icon: javascriptIcon },
+                        { name: 'Python', icon: pythonIcon },
+                        { name: 'Laravel', icon: laravelIcon },
+                        { name: 'Django', icon: djangoIcon },
                     ].map(({ name, icon }) => (
-                        <div key={name} className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-2 shadow-[0_0_14px_rgba(255,255,255,0.12)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] sm:h-12 sm:w-12">
+                        <div key={name} className="flex h-8 w-8 items-center justify-center rounded-md bg-white p-1.5 shadow-[0_0_12px_rgba(255,255,255,0.12)] transition-shadow duration-300 hover:shadow-[0_0_18px_rgba(255,255,255,0.3)] sm:h-10 sm:w-10">
                             <img src={icon} alt={name} className="h-full w-full object-contain" />
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-6 w-full">
+                <div className="mt-5 w-full">
                     <p className="hero-font text-center text-sm font-semibold text-neutral-400 sm:text-2xl">
                         [ {role} ]
                     </p>
