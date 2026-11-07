@@ -1,53 +1,40 @@
+import { Mail } from 'lucide-react'
+import BlurFade from './BlurFade.jsx'
+import { GithubIcon, LinkedinIcon } from './SocialIcons.jsx'
+
 const contactLinks = [
-    {
-        label: 'Gmail',
-        value: 'Escríbeme por correo',
-        href: 'mailto:vivasabrahan02@gmail.com',
-    },
-    {
-        label: 'LinkedIn',
-        value: 'Contacto Profesional',
-        href: 'https://www.linkedin.com/in/devvivas',
-    },
-    {
-        label: 'GitHub',
-        value: 'Mira mis proyectos',
-        href: 'https://github.com/DevVivas',
-    },
+    { label: 'Gmail', value: 'Escríbeme por correo', href: 'mailto:vivasabrahan02@gmail.com', icon: Mail },
+    { label: 'LinkedIn', value: 'Contacto Profesional', href: 'https://www.linkedin.com/in/devvivas', icon: LinkedinIcon },
+    { label: 'GitHub', value: 'Mira mis proyectos', href: 'https://github.com/DevVivas', icon: GithubIcon },
 ]
 
 export default function ContactoSeccion() {
     return (
-        <section id="contact" className="bg-neutral-950 px-6 py-10 text-neutral-300 sm:px-12 sm:py-14 lg:px-20">
-            <div className="mx-auto max-w-6xl text-center">
-                <p className="text-xl font-light uppercase tracking-[0.28em] text-neutral-400">
-                    [ Contacto ]
-                </p>
-                <div className="mt-12">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {contactLinks.map((link) => (
+        <section id="contact" className="mx-auto w-full max-w-2xl px-6 pb-40 pt-12">
+            <BlurFade as="h2" className="text-xl font-bold">Contacto</BlurFade>
+            <BlurFade as="p" delay={0.04} className="mt-3 text-pretty leading-7 text-muted-foreground">
+                Puedes escribirme para conversar sobre proyectos web, desarrollo de APIs, colaboraciones
+                profesionales o nuevas oportunidades laborales.
+            </BlurFade>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                {contactLinks.map((link, i) => {
+                    const external = link.href.startsWith('http')
+                    return (
+                        <BlurFade as="li" key={link.label} delay={0.08 + i * 0.05} className="list-none">
                             <a
-                                key={link.label}
                                 href={link.href}
-                                target={link.href.startsWith('http') ? '_blank' : undefined}
-                                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                                className="w-full max-w-[220px] border border-neutral-800 p-5 text-center transition-colors hover:border-neutral-500 hover:bg-neutral-900"
+                                target={external ? '_blank' : undefined}
+                                rel={external ? 'noreferrer' : undefined}
+                                className="group block h-full rounded-xl border border-border bg-card p-4 transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-muted-foreground/50 active:scale-[0.98]"
                             >
-                                <span className="text-sm uppercase tracking-[0.2em] text-neutral-100">
-                                    {link.label}
-                                </span>
-                                <span className="mt-3 block text-sm leading-6 text-neutral-500">
-                                    {link.value}
-                                </span>
+                                <link.icon aria-hidden="true" className="h-5 w-5 text-muted-foreground transition-colors duration-200 group-hover:text-accent" />
+                                <span className="mt-3 block text-sm font-semibold">{link.label}</span>
+                                <span className="mt-1 block text-sm text-muted-foreground">{link.value}</span>
                             </a>
-                        ))}
-                    </div>
-                    <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-7 text-neutral-500">
-                        Puedes escribirme para conversar sobre proyectos web, desarrollo de APIs,
-                        colaboraciones profesionales o nuevas oportunidades laborales.
-                    </p>
-                </div>
-            </div>
+                        </BlurFade>
+                    )
+                })}
+            </ul>
         </section>
     )
 }
